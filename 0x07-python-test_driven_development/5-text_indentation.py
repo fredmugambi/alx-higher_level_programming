@@ -5,6 +5,7 @@
 
 def text_indentation(text):
     """Print text with two new lines after each '.', '?', and ':'.
+
     Args:
         text (string): The text to print.
     Raises:
@@ -13,19 +14,17 @@ def text_indentation(text):
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    punctuation_marks = ['.', '?', ':']
-    lines = []
-    current_line = ""
+    c = 0
+    while c < len(text) and text[c] == ' ':
+        c += 1
 
-    for char in text:
-        current_line += char
-        if char in punctuation_marks:
-            lines.append(current_line.strip())
-            current_line = ""
-
-    if current_line:
-        lines.append(current_line.strip())
-
-    for line in lines:
-        print(line)
-
+    while c < len(text):
+        print(text[c], end="")
+        if text[c] == "\n" or text[c] in ".?:":
+            if text[c] in ".?:":
+                print("\n")
+            c += 1
+            while c < len(text) and text[c] == ' ':
+                c += 1
+            continue
+        c += 1

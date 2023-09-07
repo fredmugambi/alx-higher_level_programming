@@ -5,6 +5,7 @@
 
 def print_square(size):
     """Print a square with the # character.
+
     Args:
         size (int): The height/width of the square.
     Raises:
@@ -13,9 +14,9 @@ def print_square(size):
     """
     if not isinstance(size, int):
         raise TypeError("size must be an integer")
-
     if size < 0:
         raise ValueError("size must be >= 0")
 
-    for _ in range(size):
-        print("#" * size)
+    for i in range(size):
+        [print("#", end="") for j in range(size)]
+        print("")
