@@ -1,3 +1,7 @@
+#!/usr/bin/python3
+# 2-matrix_divided.py
+"""Defines a matrix division function."""
+
 def matrix_divided(matrix, div):
     # Check if matrix is a list of lists of integers or floats
     if not all(isinstance(row, list) and all(isinstance(val, (int, float)) for val in row) for row in matrix):
